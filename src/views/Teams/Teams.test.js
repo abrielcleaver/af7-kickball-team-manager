@@ -9,7 +9,7 @@ it.skip('should render a list of teams', async () => {
       <Teams />
     </MemoryRouter>
   );
-  // screen.getByLabelText(/loading/);
+  screen.getByLabelText(/loading/);
   await screen.findByText(/Bridge City Sneakers/);
 
   expect(container).toMatchSnapshot();
