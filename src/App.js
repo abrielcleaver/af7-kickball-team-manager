@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import Home from './views/Home/Home';
 import Auth from './views/Auth/Auth';
 import AddTeam from './views/Teams/AddTeam';
@@ -10,6 +10,8 @@ import { useState, useEffect } from 'react';
 import { getUser } from './services/users';
 import Teams from './views/Teams/Teams';
 import Header from './components/Header/Header';
+import ProtectedRoute from './utils/ProtectedRoute';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -40,14 +42,21 @@ function App() {
           path="/teams/new"
           render={(routeProps) => <AddTeam {...routeProps} user={currentUser} />}
         />
+        <ProtectedRoute exact path="/teams/new" currentUser={currentUser}>
+          <AddTeam user={currentUser} />
+        </ProtectedRoute>
         <Route
           exact
           path="/teams/:id"
           render={(routeProps) => <Team {...routeProps} user={currentUser} />}
         />
+        <ProtectedRoute exact path="/teams/:id/edit" currentUser={currentUser}>
+          <EditTeam user={currentUser} />
+        </ProtectedRoute>
         <Route exact path="/teams/:id/edit">
           <EditTeam user={currentUser} />
         </Route>
+
         <Route>
           <NotFound />
         </Route>
