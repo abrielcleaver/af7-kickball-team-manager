@@ -5,9 +5,9 @@
 - [ ] An authorized user can add a new team
 - [ ] An authorized user can edit an existing team
 - [ ] An authorized user can delete an existing team
-- [ ] Only authorized viewers should see Links to edit / delete
-- [ ] Unauthorized users are redirected to sign in if they try to access the new or edit routes
-- [ ] All users can view the `/teams` page
+- [x] Only authorized viewers should see Links to edit / delete
+- [x] Unauthorized users are redirected to sign in if they try to access the new or edit routes
+- [x] All users can view the `/teams` page
 - [ ] Tests should continue to pass (you can update snapshots)
 
 
@@ -23,12 +23,10 @@
 
 - App.js To Do:
     - [x] import ProtectedRoute from './utils/ProtectedRoute
-    - [ ] import useHistory from react-router-dom ?
-    - [ ] import Redirect from react ?
     - [x] add ProtectedRoute component to properly protect the
         - [x] `/new`, and
         - [x] `/edit` routes
-        - [ ] users redirected to sign-in if trying to access routes not signed in.
-
+        - [x] users redirected to sign-in if trying to access routes not signed in.
+- Teams.js To Do:
 
 
