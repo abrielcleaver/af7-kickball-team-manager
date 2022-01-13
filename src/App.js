@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './views/Home/Home';
 import Auth from './views/Auth/Auth';
 import AddTeam from './views/Teams/AddTeam';
@@ -11,7 +11,6 @@ import { getUser } from './services/users';
 import Teams from './views/Teams/Teams';
 import Header from './components/Header/Header';
 import ProtectedRoute from './utils/ProtectedRoute';
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);

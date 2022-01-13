@@ -19,14 +19,16 @@
 - [x] Create a Supabase table called `teams` with city, name, state columns
 - [x] Supabase enable row level security for the teams table
 - [x]  Add policies for INSERT, DELETE, READ and UPDATE
-- [ ] Using the provided `<ProtectedRoute>` component to properly protect the `/new`, and `/edit` routes -- users should be redirected to the sign-in page if they try to access those routes while not signed in.
+- [x] Use `<ProtectedRoute>` component to properly protect the `/new`, and `/edit` routes 
 
 - App.js To Do:
     - [x] import ProtectedRoute from './utils/ProtectedRoute
-    - [x] import useHistory from react-router-dom
-    - [x] import Redirect from react
+    - [ ] import useHistory from react-router-dom ?
+    - [ ] import Redirect from react ?
     - [x] add ProtectedRoute component to properly protect the
         - [x] `/new`, and
-        - [x] `/edit` routes 
+        - [x] `/edit` routes
+        - [ ] users redirected to sign-in if trying to access routes not signed in.
+
 
 
